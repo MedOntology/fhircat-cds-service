@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:semanticSignifiers xmlns:ns2="org.opencds.config.rest.v2"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="org.opencds.config.rest.v2 https://opencds.org/schema/OpenCDSConfigRest.xsd">
+
+    <semanticSignifier>
+        <identifier scopingEntityId="org.hl7.fhir" businessId="cds-hooks-fhir-stu3" version="1.0"/>
+        <name>org.hl7.fhir^cds-hooks-fhir-stu3^1.2.0</name>
+        <description>org.hl7.fhir^cds-hooks-fhir-stu3^1.2.0</description>
+        <entryPoint>org.opencds.hooks.evaluation.stu3.HooksEntryPoint</entryPoint>
+        <exitPoint>org.opencds.hooks.evaluation.stu3.HooksExitPoint</exitPoint>
+        <factListsBuilder>org.opencds.hooks.evaluation.InputFactListsBuilder</factListsBuilder>
+        <resultSetBuilder>org.opencds.hooks.evaluation.OutputResultSetBuilder</resultSetBuilder>
+        <timestamp>2018-07-19T12:00:00.000-06:00</timestamp>
+        <userId>phillip</userId>
+    </semanticSignifier>
+
+    <semanticSignifier>
+        <identifier scopingEntityId="org.hl7.fhir" businessId="cds-hooks-fhir-r4" version="1.0"/>
+        <name>org.hl7.fhir^cds-hooks-fhir-r4^1.2.0</name>
+        <description>org.hl7.fhir^cds-hooks-fhir-r4^1.2.0</description>
+        <entryPoint>org.opencds.hooks.evaluation.r4.HooksEntryPoint</entryPoint>
+        <exitPoint>org.opencds.hooks.evaluation.r4.HooksExitPoint</exitPoint>
+        <factListsBuilder>org.opencds.hooks.evaluation.InputFactListsBuilder</factListsBuilder>
+        <resultSetBuilder>org.opencds.hooks.evaluation.OutputResultSetBuilder</resultSetBuilder>
+        <timestamp>2019-07-09T12:00:00.000-06:00</timestamp>
+        <userId>phillip</userId>
+    </semanticSignifier>
+
+</ns2:semanticSignifiers>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rest:pluginPackages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:rest="org.opencds.config.rest.v2"
+                     xsi:schemaLocation="org.opencds.config.rest.v2 https://opencds.org/schema/OpenCDSConfigRest.xsd">
+    <pluginPackage>
+        <identifier scopingEntityId="org.opencds" businessId="opencds-preprocess-plugin-example-group" version="1.0.0"/>
+        <loadContext>CLASSPATH</loadContext>
+        <plugins>
+            <plugin>
+                <identifier scopingEntityId="org.opencds" businessId="opencds-preprocess-plugin-example" version="1.0.0"/>
+                <className>org.opencds.plugin.preprocess.example.ExamplePreProcessPlugin</className>
+            </plugin>
+        </plugins>
+        <timestamp>2018-09-25T00:00:00</timestamp>
+        <userId>phillip</userId>
+    </pluginPackage>
+    <pluginPackage>
+        <identifier scopingEntityId="org.opencds" businessId="opencds-postprocess-plugin-example-group" version="1.0.0"/>
+        <loadContext>CLASSPATH</loadContext>
+        <plugins>
+            <plugin>
+                <identifier scopingEntityId="org.opencds" businessId="opencds-postprocess-plugin-example" version="1.0.0"/>
+                <className>org.opencds.plugin.postprocess.example.ExamplePostProcessPlugin</className>
+            </plugin>
+        </plugins>
+        <timestamp>2018-09-25T00:00:00</timestamp>
+        <userId>phillip</userId>
+    </pluginPackage>
+</rest:pluginPackages>

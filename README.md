@@ -1,2 +1,2 @@
 # fhircat-cds-service
-A CDS service for the FHIRCat project
+A OpenCDS Service for the FHIRCat project

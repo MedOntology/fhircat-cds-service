@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:executionEngines xmlns:ns2="org.opencds.config.rest.v2"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="org.opencds.config.rest.v2 https://opencds.org/schema/OpenCDSConfigRest.xsd">
+    <executionEngine>
+        <identifier>CDS Hooks Adapter</identifier>
+        <adapter>org.opencds.hooks.adapter.CdsHooksAdapter</adapter>
+        <context>org.opencds.hooks.adapter.CdsHooksExecutionEngineContext</context>
+        <knowledgeLoader>org.opencds.hooks.adapter.CdsHooksKnowledgeLoader</knowledgeLoader>
+        <description>Adapter for CdsHooksExecutionEngine</description>
+        <timestamp>2018-07-19T12:00:00.000-07:00</timestamp>
+        <userId>phillip</userId>
+        <supportedOperation>EVALUATION.EVALUATE</supportedOperation>
+        <supportedOperation>EVALUATION.EVALUATE_AT_SPECIFIED_TIME</supportedOperation>
+    </executionEngine>
+</ns2:executionEngines>

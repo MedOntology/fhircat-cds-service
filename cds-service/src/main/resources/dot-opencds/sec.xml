@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config:ConfigurationSecurity xmlns:config="org.opencds.config.v2"
+                              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                              xsi:schemaLocation="org.opencds.config.v2 https://opencds.org/schema/OpenCDSConfiguration.xsd">
+    <users>
+        <user>
+            <username>username</username>
+            <password>my1pass1</password>
+            <enabled>true</enabled>
+            <grantedAuthorities>
+                <authority>ROLE_CONFIG_ADMIN</authority>
+                <authority>ROLE_CONFIG_USER</authority>
+            </grantedAuthorities>
+        </user>
+    </users>
+</config:ConfigurationSecurity>
+
