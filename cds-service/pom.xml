@@ -26,8 +26,13 @@
         <dependency>
             <groupId>org.opencds.webapp</groupId>
             <artifactId>opencds-webapp-config-cdshooks</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ca.uhn.hapi.fhir</groupId>
+                    <artifactId>org.hl7.fhir.r5</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
         <dependency>
             <groupId>com.medontology.fhircat</groupId>
             <artifactId>thiopurine-knowledge-module</artifactId>

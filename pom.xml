@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.medontology.fhircat</groupId>
     <artifactId>fhircat-cds-service</artifactId>
@@ -11,7 +12,6 @@
         <module>opencds-preprocess-plugin</module>
         <module>opencds-postprocess-plugin</module>
         <module>thiopurine-knowledge-module</module>
-        <module>opencds-hooks-r5-km</module>
     </modules>
 
     <properties>
@@ -60,16 +60,12 @@
                 <groupId>org.opencds.hooks</groupId>
                 <artifactId>opencds-hooks-engine-api</artifactId>
                 <version>${opencds-hooks.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.opencds.hooks</groupId>
-                <artifactId>opencds-hooks-evaluation-stu3</artifactId>
-                <version>${opencds-hooks.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.opencds.hooks</groupId>
-                <artifactId>opencds-hooks-evaluation-r4</artifactId>
-                <version>${opencds-hooks.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-codec</groupId>
+                        <artifactId>commons-codec</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.opencds.hooks</groupId>

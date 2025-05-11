@@ -1,8 +1,13 @@
 package com.medontology.fhircat.cds.hooks.km.thiopurine;
 
+import org.hl7.fhir.r5.model.OperationOutcome;
+import org.hl7.fhir.r5.model.Patient;
+import org.hl7.fhir.r5.model.Resource;
 import org.opencds.hooks.engine.api.CdsHooksEvaluationContext;
 import org.opencds.hooks.engine.api.CdsHooksExecutionEngine;
+import org.opencds.hooks.model.r5.request.prefetch.R5PrefetchHelper;
 import org.opencds.hooks.model.request.CdsRequest;
+import org.opencds.hooks.model.request.prefetch.PrefetchResult;
 import org.opencds.hooks.model.response.Card;
 import org.opencds.hooks.model.response.CdsResponse;
 
@@ -14,6 +19,8 @@ import java.util.Map;
  * This class is the main knowledge module (Java-based) that can be used within OpenCDS.
  */
 public class ExampleHooksKnowledgeModule implements CdsHooksExecutionEngine {
+
+    private R5PrefetchHelper prefetchHelper = new R5PrefetchHelper();
 
     /**
      * OpenCDS will adapt the input received from the CDS Request, and provide the request and the
@@ -65,10 +72,12 @@ public class ExampleHooksKnowledgeModule implements CdsHooksExecutionEngine {
          * processing.
          */
 
+        PrefetchResult<OperationOutcome, Resource> prefetchResult = cdsRequest.getPrefetchResource("patientToGreet", prefetchHelper);
+        Patient patient = prefetchResult.getResource(Patient.class);
 
         CdsResponse response = new CdsResponse();
         Card card = new Card();
-        card.setDetail("example response card");
+        card.setDetail("thiopurine response card");
         response.addCard(card);
         return response;
     }

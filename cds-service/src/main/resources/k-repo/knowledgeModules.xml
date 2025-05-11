@@ -3,6 +3,37 @@
                       xmlns:ns2="org.opencds.config.rest.v2"
                       xsi:schemaLocation="org.opencds.config.rest.v2 https://opencds.org/schema/OpenCDSConfigRest.xsd">
     <knowledgeModule>
+        <identifier scopingEntityId="com.medontology.fhircat" businessId="thiopurine-knowledge-module" version="1.0"/>
+        <status>DRAFT</status>
+        <cdsHook>
+            <hook>patient-view</hook>
+            <title>Example Knowledge Module for dosing of thiopurines</title>
+            <description>Example Knowledge Module for dosing of thiopurines</description>
+            <id>thiopurine-knowledge-module</id>
+            <prefetch>
+                <resource>
+                    <name>Patient</name>
+                    <query>Patient/{{context.patientId}}</query>
+                </resource>
+            </prefetch>
+            <fhirVersion>R5</fhirVersion>
+        </cdsHook>
+        <executionEngine>CDS Hooks Adapter</executionEngine>
+        <semanticSignifierId scopingEntityId="org.hl7.fhir" businessId="cds-hooks-fhir-r5" version="1.0"/>
+        <package>
+            <packageType>CLASSPATH</packageType>
+            <packageId>com.medontology.fhircat.cds.hooks.km.thiopurine.ExampleHooksKnowledgeModule</packageId>
+        </package>
+        <preProcessPlugins>
+            <preProcessPlugin scopingEntityId="org.opencds" businessId="opencds-preprocess-plugin-example" version="1.0.0"/>
+        </preProcessPlugins>
+        <postProcessPlugins>
+            <postProcessPlugin scopingEntityId="org.opencds" businessId="opencds-postprocess-plugin-example" version="1.0.0"/>
+        </postProcessPlugins>
+        <timestamp>2018-09-28T01:12:00.000-06:00</timestamp>
+        <userId>phillip</userId>
+    </knowledgeModule>
+    <knowledgeModule>
         <identifier scopingEntityId="org.opencds.example" businessId="example-knowledge-module-r4" version="1.0"/>
         <status>DRAFT</status>
         <cdsHook>
