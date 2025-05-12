@@ -13,6 +13,7 @@
         <module>opencds-postprocess-plugin</module>
         <module>thiopurine-knowledge-module</module>
         <module>cds-service-test</module>
+        <module>fhircat-cds-utils</module>
     </modules>
 
     <properties>

@@ -1,0 +1,61 @@
+{
+  "resourceType": "MolecularDefinition",
+  "id": "200",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/MolecularDefinition"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://fhircat.org/haplotype-associated-gene",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.genenames.org",
+            "code": "HGNC:23063",
+            "display": "HGNC:23063"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://fhircat.org",
+      "value": "NUDT15 *1/*3"
+    }
+  ],
+  "description": "Definition of genotype NUDT15*1/*3",
+  "moleculeType": {
+    "text": "DNA"
+  },
+  "member": [
+    {
+      "reference": "MolecularDefinition/3"
+    },
+    {
+      "reference": "MolecularDefinition/4"
+    }
+  ],
+  "representation": [
+    {
+      "focus": {
+        "text": "genotype"
+      }
+    },
+    {
+      "code": [
+        {
+          "coding": [
+            {
+              "system": "http://www.mygenotypes.org",
+              "code": "mygeno:200",
+              "display": "NUDT15*1/*3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

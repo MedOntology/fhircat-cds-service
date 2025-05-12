@@ -1,8 +1,6 @@
 package com.medontology.fhircat.cds.hooks.km.thiopurine;
 
-import org.hl7.fhir.r5.model.OperationOutcome;
-import org.hl7.fhir.r5.model.Patient;
-import org.hl7.fhir.r5.model.Resource;
+import org.hl7.fhir.r5.model.*;
 import org.opencds.hooks.engine.api.CdsHooksEvaluationContext;
 import org.opencds.hooks.engine.api.CdsHooksExecutionEngine;
 import org.opencds.hooks.model.r5.request.prefetch.R5PrefetchHelper;
@@ -18,7 +16,7 @@ import java.util.Map;
 /**
  * This class is the main knowledge module (Java-based) that can be used within OpenCDS.
  */
-public class ExampleHooksKnowledgeModule implements CdsHooksExecutionEngine {
+public class ThiopurineKnowledgeModule implements CdsHooksExecutionEngine {
 
     private R5PrefetchHelper prefetchHelper = new R5PrefetchHelper();
 
@@ -74,6 +72,10 @@ public class ExampleHooksKnowledgeModule implements CdsHooksExecutionEngine {
 
         PrefetchResult<OperationOutcome, Resource> prefetchResult = cdsRequest.getPrefetchResource("patientToGreet", prefetchHelper);
         Patient patient = prefetchResult.getResource(Patient.class);
+
+        PrefetchResult<OperationOutcome, Resource> labPrefetchResult = cdsRequest.getPrefetchResource("geneticLabResults", prefetchHelper);
+        Observation geneticLabResult = labPrefetchResult.getResource(Observation.class);
+        System.out.println(geneticLabResult.getValueReference().getReference());
 
         CdsResponse response = new CdsResponse();
         Card card = new Card();

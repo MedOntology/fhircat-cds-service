@@ -1,0 +1,54 @@
+{
+  "resourceType": "MolecularDefinition",
+  "id": "4",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/MolecularDefinition"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://fhircat.org/haplotype-associated-gene",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.genenames.org",
+            "code": "HGNC:23063",
+            "display": "HGNC:23063"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://fhircat.org",
+      "value": "NUDT15 *3"
+    }
+  ],
+  "description": "Definition of haplotype TPMT*1",
+  "moleculeType": {
+    "text": "DNA"
+  },
+  "representation": [
+    {
+      "focus": {
+        "text": "haplotype"
+      }
+    },
+    {
+      "code": [
+        {
+          "coding": [
+            {
+              "system": "https://pharmvar.org",
+              "version": "6.2.6",
+              "code": "PV01599",
+              "display": "NUDT15*3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

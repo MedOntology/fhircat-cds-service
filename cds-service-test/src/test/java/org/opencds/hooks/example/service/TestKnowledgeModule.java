@@ -3,44 +3,19 @@ package org.opencds.hooks.example.service;
 import org.junit.Test;
 import org.opencds.hooks.model.r5.util.R5JsonUtil;
 import org.opencds.hooks.model.response.CdsResponse;
+import org.fhircat.cds.utils.ResourceFileReader;
 
+import java.net.URL;
 import java.net.http.HttpResponse;
 
-//@ExtendWith(SpringExtension.class)
-//@ContextConfiguration(classes = AppConfiguration.class)
 public class TestKnowledgeModule {
 
     @Test
     public void test() {
-
-        String cdsHooksPayload =  """
-                    {
-                      "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
-                      "fhirServer": "http://fhircat.org:8080",
-                      "hook": "patient-view",
-                      "fhirAuthorization": {
-                        "access_token": "some-opaque-fhir-access-token",
-                        "token_type": "Bearer",
-                        "expires_in": 300,
-                        "scope": "user/Patient.read user/Observation.read",
-                        "subject": "cds-service4"
-                      },
-                      "context": {
-                        "userId": "Practitioner/example",
-                        "patientId": "1288992",
-                        "encounterId": "89284"
-                      },
-                      "prefetch": {
-                        "patientToGreet": {
-                          "resourceType": "Patient",
-                          "gender": "male",
-                          "birthDate": "1925-12-23",
-                          "id": "1288992",
-                          "active": true
-                        }
-                      }
-                    }
-                    """;
+        ResourceFileReader resourceFileReader = new ResourceFileReader();
+        URL url = java.lang.ClassLoader.getSystemResource("payloads/test1.json");
+        System.out.println(url.getPath());
+        String cdsHooksPayload = resourceFileReader.getFileContentAsString("payloads/test1.json");
 
         RestClient client = new RestClient();
         HttpResponse<String> response = client.invokeService("http://localhost:8080/clingen-cds-service/r5/hooks/cds-services/thiopurine-knowledge-module", cdsHooksPayload);
@@ -49,6 +24,5 @@ public class TestKnowledgeModule {
         R5JsonUtil r5JsonUtil = new R5JsonUtil();
         CdsResponse cdsHooksResponse = r5JsonUtil.fromJson(s, CdsResponse.class);
         cdsHooksResponse.getCards().forEach(card -> System.out.println(card.toString()));
-
     }
 }

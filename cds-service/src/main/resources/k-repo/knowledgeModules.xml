@@ -22,7 +22,7 @@
         <semanticSignifierId scopingEntityId="org.hl7.fhir" businessId="cds-hooks-fhir-r5" version="1.0"/>
         <package>
             <packageType>CLASSPATH</packageType>
-            <packageId>com.medontology.fhircat.cds.hooks.km.thiopurine.ExampleHooksKnowledgeModule</packageId>
+            <packageId>com.medontology.fhircat.cds.hooks.km.thiopurine.ThiopurineKnowledgeModule</packageId>
         </package>
         <preProcessPlugins>
             <preProcessPlugin scopingEntityId="org.opencds" businessId="opencds-preprocess-plugin-example" version="1.0.0"/>
@@ -78,7 +78,7 @@
         <semanticSignifierId scopingEntityId="org.hl7.fhir" businessId="cds-hooks-fhir-stu3" version="1.0"/>
         <package>
             <packageType>CLASSPATH</packageType>
-            <packageId>com.medontology.fhircat.cds.hooks.km.thiopurine.ExampleHooksKnowledgeModule</packageId>
+            <packageId>com.medontology.fhircat.cds.hooks.km.thiopurine.ThiopurineKnowledgeModule</packageId>
         </package>
         <timestamp>2018-09-28T01:12:00.000-06:00</timestamp>
         <userId>phillip</userId>
