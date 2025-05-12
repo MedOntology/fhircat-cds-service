@@ -18,7 +18,13 @@ import java.util.Map;
  */
 public class ThiopurineKnowledgeModule implements CdsHooksExecutionEngine {
 
+    private static final MolDefIndex molDefIndex = new MolDefIndex();
+    static {
+        molDefIndex.populate();
+    }
+
     private R5PrefetchHelper prefetchHelper = new R5PrefetchHelper();
+
 
     /**
      * OpenCDS will adapt the input received from the CDS Request, and provide the request and the
@@ -76,6 +82,10 @@ public class ThiopurineKnowledgeModule implements CdsHooksExecutionEngine {
         PrefetchResult<OperationOutcome, Resource> labPrefetchResult = cdsRequest.getPrefetchResource("geneticLabResults", prefetchHelper);
         Observation geneticLabResult = labPrefetchResult.getResource(Observation.class);
         System.out.println(geneticLabResult.getValueReference().getReference());
+
+        String molDefId = geneticLabResult.getValueReference().getReference();
+        MolecularDefinition molDef = molDefIndex.get(molDefId);
+
 
         CdsResponse response = new CdsResponse();
         Card card = new Card();

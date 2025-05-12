@@ -28,7 +28,7 @@
         "text": "Genetic Panel"
       },
       "valueReference": {
-        "reference": "MolecularDefinition/1"
+        "reference": "MolecularDefinition/100"
       }
     }
   }
