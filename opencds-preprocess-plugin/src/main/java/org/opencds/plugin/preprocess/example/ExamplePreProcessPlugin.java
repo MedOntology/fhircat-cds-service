@@ -2,6 +2,10 @@ package org.opencds.plugin.preprocess.example;
 
 import org.opencds.plugin.api.PreProcessPlugin;
 import org.opencds.plugin.api.PreProcessPluginContext;
+import org.opencds.hooks.model.request.CdsRequest;
+
+import java.util.List;
+import java.util.Map;
 
 public class ExamplePreProcessPlugin implements PreProcessPlugin {
 
@@ -28,8 +32,10 @@ public class ExamplePreProcessPlugin implements PreProcessPlugin {
          * globals is the map onto which globally available items, such as terminology services, may be placed.
          * namedObjects is map onto which elements of interest to this process may be interested.
          */
-        context.getAllFactLists();
+        Map<Class<?>, List<?>> facts = context.getAllFactLists();
         context.getGlobals();
         context.getNamedObjects();
+
+        List<?> list = facts.get(CdsRequest.class);
     }
 }

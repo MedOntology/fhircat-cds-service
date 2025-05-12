@@ -12,6 +12,7 @@
         <module>opencds-preprocess-plugin</module>
         <module>opencds-postprocess-plugin</module>
         <module>thiopurine-knowledge-module</module>
+        <module>cds-service-test</module>
     </modules>
 
     <properties>
