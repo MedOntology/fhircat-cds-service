@@ -42,14 +42,12 @@
     {
       "focus": {
         "text": "genotype"
-      }
-    },
-    {
+      },
       "code": [
         {
           "coding": [
             {
-              "system": "http://www.mygenotypes.org",
+              "system": "http://mygenotypes.org",
               "code": "mygeno:200",
               "display": "NUDT15*1/*3"
             }
