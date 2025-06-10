@@ -34,11 +34,6 @@
         </dependency>
         <dependency>
             <groupId>com.medontology.fhircat</groupId>
-            <artifactId>opencds-hooks-r5-km</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.medontology.fhircat</groupId>
             <artifactId>opencds-preprocess-plugin</artifactId>
             <version>${project.version}</version>
         </dependency>
